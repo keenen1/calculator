@@ -1,0 +1,37 @@
+body {
+    background-image: url('/images/blackboard.jpg');
+    background-size: cover;
+}
+#box {
+    border: 10px solid pink;
+    border-radius: 20px;
+    margin: auto;
+    width: 400px;
+    height: 620px;
+    margin-top: 60px;
+    background-color: blue;
+}
+#keenen-calc {
+   text-align: center;
+   margin-top: 15px;
+   font-family: 'Montserrat', sans-serif;
+}
+
+tr, td {
+    border: 1px solid ;
+    /* border-collapse: collapse; */
+}
+
+table {
+    margin: auto;
+    margin-top: 20px;
+}
+
+td {
+    border: 5px solid black;
+    text-align: center;
+    width: 80px;
+    height: 80px;
+    font-size: 30px;
+    background-color: white;
+}
