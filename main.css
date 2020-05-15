@@ -1,20 +1,34 @@
-body {
+/* body {
     background-image: url('/images/blackboard.jpg');
     background-size: cover;
-}
+} */
 #box {
     border: 10px solid pink;
     border-radius: 20px;
     margin: auto;
     width: 400px;
-    height: 620px;
-    margin-top: 60px;
-    background-color: blue;
+    height: 630px;
+    margin-top: 30px;
+    background-color: rgba(1, 1, 180, 0.562);
 }
-#keenen-calc {
-   text-align: center;
-   margin-top: 15px;
-   font-family: 'Montserrat', sans-serif;
+.head-name {
+    display: flex;
+}
+#casio {
+    margin-top: 15px;
+    color: white;
+    text-align: left;
+    margin-left: 15px;
+    font-family: 'Play', sans-serif;
+    font-size: 20px;
+}
+#fx-9750GII {
+    margin-top: 15px;
+    margin-left: auto;
+    color: white;
+    margin-right: 10px;
+    font-size: 20px;
+    font-style: italic;
 }
 
 tr, td {
@@ -24,14 +38,39 @@ tr, td {
 
 table {
     margin: auto;
-    margin-top: 20px;
+    margin-top: 10px;
+    /* white-space: nowrap;
+    overflow: hidden;
+    text-overflow: clip; */
+}
+
+#input {
+    background-color: black;
+    color: green;
+    border-color: white;
+    text-align: right;
+    padding-right: 20px;
+    font-size: 40px;
+    font-family: 'Roboto Mono', monospace;
+    
 }
 
 td {
     border: 5px solid black;
+    border-top-left-radius: 20px;
+    border-bottom-right-radius: 20px;
     text-align: center;
     width: 80px;
     height: 80px;
     font-size: 30px;
     background-color: white;
+}
+.red-but {
+    background-color: red;
+    color: white;
+}
+.buttons:hover {
+    background-color: purple;
+    color: white;
+    cursor: pointer;
 }
