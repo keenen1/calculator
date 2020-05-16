@@ -3,9 +3,10 @@
     background-size: cover;
 } */
 #box {
-    border: 10px solid pink;
+    border: 10px solid rgb(255, 154, 170);
     border-radius: 20px;
     margin: auto;
+    margin-right: 100px;
     width: 400px;
     height: 630px;
     margin-top: 30px;
@@ -33,17 +34,37 @@
 
 tr, td {
     border: 1px solid ;
-    /* border-collapse: collapse; */
 }
 
 table {
     margin: auto;
     margin-top: 10px;
-    /* white-space: nowrap;
-    overflow: hidden;
-    text-overflow: clip; */
+    
 }
 
+#game {
+    display: flex;
+    
+}
+body {
+    background-image: url(images/blackboard.jpg);
+    background-size: cover;
+}
+.right-message {
+    margin-right: 100px;
+    margin-top: auto;
+    margin-bottom: auto;
+
+}
+.instructions {
+    width: 200px;
+    background-color: black;
+    color: green;
+    font-family: 'Roboto Mono', monospace;
+    border: 5px solid green;
+    border-radius: 10px;
+    padding: 10px;
+}
 #input {
     background-color: black;
     color: green;
@@ -52,7 +73,9 @@ table {
     padding-right: 20px;
     font-size: 40px;
     font-family: 'Roboto Mono', monospace;
-    
+    /* white-space: nowrap;
+    overflow: hidden;
+    text-overflow: clip; */
 }
 
 td {
@@ -69,7 +92,7 @@ td {
     background-color: red;
     color: white;
 }
-.buttons:hover {
+td:hover {
     background-color: purple;
     color: white;
     cursor: pointer;

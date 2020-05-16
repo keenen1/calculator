@@ -1,9 +1,6 @@
-
 var numString = ""
 var total = 0
 var input = document.getElementById("input")
-
-  
 
 // KeyPress function
 document.onkeydown = function calculate(event) {
@@ -74,48 +71,73 @@ document.onkeydown = function calculate(event) {
     }
 }
 
+var button = document.querySelector("#buttons")
+
+button.addEventListener("click", buttonPressed, false)
+
+
+
 // Button Press Function
-
-// var button = document.getElementsByClassName("buttons")
-// var press = buttonPressed();
-
-// button[press].addEventListener(
-//     'click', 
-//     function() {
-//         switch (press){
-
-//         }
-// })
-
-// function buttonPressed() {
-//     for (var i=0; i < button.length; i++){
-//         if (button[i].innerHTML == "AC") return 0
-//         if (button[i].innerHTML == "CE") return 1
-//         if (button[i].innerHTML == "%") return 2
-//         if (button[i].innerHTML == "÷") return 3
-//         if (button[i].innerHTML == "7") return 4
-//         if (button[i].innerHTML == "8") return 5
-//         if (button[i].innerHTML == "9") return 6
-//         if (button[i].innerHTML == "x") return 7
-//         if (button[i].innerHTML == "4") return 8
-//         if (button[i].innerHTML == "5") return 9
-//         if (button[i].innerHTML == "6") return 10
-//         if (button[i].innerHTML == "-") return 11
-//         if (button[i].innerHTML == "1") return 12
-//         if (button[i].innerHTML == "2") return 13
-//         if (button[i].innerHTML == "3") return 14
-//         if (button[i].innerHTML == "+") return 15
-//         if (button[i].innerHTML == "0") return 16
-//         if (button[i].innerHTML == ".") return 17
-//         if (button[i].innerHTML == "=") return 18
-//     }
-
-// }
-
+function buttonPressed(e) {
+    if (e.target !== e.currentTarget){
+        var clickedItem = e.target.id
+    }
+    if (clickedItem == "ac" || clickedItem == "ce"){
+        prevOpe = ""
+        currentOpe = ""
+        numString = ""
+        total = ""
+        input.innerHTML = "0"
+    }
+    if (clickedItem == "nine") numberPressed("9")
+    if (clickedItem == "eight") numberPressed("8")
+    if (clickedItem == "seven") numberPressed("7")
+    if (clickedItem == "six") numberPressed("6")
+    if (clickedItem == "five") numberPressed("5")
+    if (clickedItem == "four") numberPressed("4")
+    if (clickedItem == "three") numberPressed("3")
+    if (clickedItem == "two") numberPressed("2")
+    if (clickedItem == "one") numberPressed("1")
+    if (clickedItem == "zero") numberPressed("0")
+    if (clickedItem == "dot") numberPressed(".")
+    if (clickedItem == "percent") {
+        if (total != 0 && numString == "") {
+            total /= 100
+            input.innerHTML = total
+        }else if (numString != ""){
+            total = parseFloat(numString)
+            total /= 100
+            input.innerHTML = total
+        }
+        prevOpe = ""
+        currentOpe = ""
+    }
+    if (clickedItem == "plus") {
+        currentOpe = "+"    
+        operator()
+    }
+    if (clickedItem == "minus") {
+        currentOpe = "-"    
+        operator()
+    }
+    if (clickedItem == "multiply") {
+        currentOpe = "x"    
+        operator()
+    }
+    if (clickedItem == "divide") {
+        currentOpe = "/"    
+        operator()
+    }
+    if (clickedItem == "equals") {
+        currentOpe = "="
+        operator()
+    }
+}
 
 var prevOpe = ""
 var currentOpe = ""
 
+// Number Function
 function numberPressed(num){
     if (numString == "" && num == "0"){
         return
@@ -129,7 +151,7 @@ function numberPressed(num){
     }
 }
 
-
+// Operator Function
 function operator(){
     if (total == 0) {
         total = parseFloat(numString)
@@ -157,10 +179,6 @@ function operator(){
             numString = ""
             prevOpe = currentOpe
         }
-
-        // if (currentOpe = "%") {
-        //     total /= 100
-        // }
 
         if (currentOpe = "=") {
             prevOpe = ""

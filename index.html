@@ -2,7 +2,6 @@
        // Calculator //
       //////////////// -->
 
-   
 <!DOCTYPE html>
 <html>
     <head>
@@ -15,60 +14,74 @@
 
     <body>
         <!-- Initialise Calculator Box -->
-        Current Status: Please use keyboard, buttons are WIP</br>
-        Operators on keyboard: "+", "-", "x", "/", "enter or return"
-        <div id="box">
-            <div class="head-name">
-                <div id="casio">
-                    CASIO
+        <div id="game">
+            <div>
+            </div>
+            <div id="box">
+                <div class="head-name">
+                    <div id="casio">
+                        CASIO
+                    </div>
+                    <div id="fx-9750GII">
+                        fx-9750GII
+                    </div>
                 </div>
-                <div id="fx-9750GII">
-                    fx-9750GII
+                <!-- Create Rows:
+                    AC, CE,  %,  ÷
+                    7,  8,  9,  x
+                    4,  5,  6,  -  
+                    1,  2,  3,  +
+                    0,  .,  =
+                    -->
+                <table id="buttons">
+                    <tr>
+                        <!-- Create Input bar -->
+                        <td id="input" colspan="4">0</td>
+                    </tr>
+                    <tr>
+                        <td id="ac" class="red-but">AC</td>
+                        <td id="ce" class="red-but">CE</td>
+                        <td id="percent">%</td>
+                        <td id="divide">÷</td>
+                    </tr>
+                    <tr>
+                        <td id="seven">7</td>
+                        <td id="eight">8</td>
+                        <td id="nine">9</td>
+                        <td id="multiply">x</td>
+                    </tr>
+                    <tr>
+                        <td id="four">4</td>
+                        <td id="five">5</td>
+                        <td id="six">6</td>
+                        <td id="minus">-</td>
+                    </tr>
+                    <tr>
+                        <td id="one">1</td>
+                        <td id="two">2</td>
+                        <td id="three">3</td>
+                        <td id="plus" rowspan="2">+</td>
+                    </tr>
+                    <tr>
+                        <td id="zero">0</td>
+                        <td id="dot">.</td>
+                        <td id="equals">=</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="right-message">
+                <div class="instructions">
+                    Keyboard Enabled:</br>
+                    + for plus</br>
+                    - for minus</br>
+                    x for times</br>
+                    / for divide</br>
+                    esc for clear</br>
+                    enter for equals
                 </div>
             </div>
-            <!-- Create Rows:
-                AC, CE,  %,  ÷
-                 7,  8,  9,  x
-                 4,  5,  6,  -  
-                 1,  2,  3,  +
-                 0,  .,  =
-                -->
-            <table>
-                <tr>
-                    <!-- Create Input bar -->
-                    <td id="input" colspan="4">0</td>
-                </tr>
-                <tr>
-                    <td class="red-but buttons">AC</td>
-                    <td class="red-but buttons">CE</td>
-                    <td class="buttons">%</td>
-                    <td class="buttons">÷</td>
-                </tr>
-                <tr>
-                    <td class="buttons">7</td>
-                    <td class="buttons">8</td>
-                    <td class="buttons">9</td>
-                    <td class="buttons">x</td>
-                </tr>
-                <tr>
-                    <td class="buttons">4</td>
-                    <td class="buttons">5</td>
-                    <td class="buttons">6</td>
-                    <td class="buttons">-</td>
-                </tr>
-                <tr>
-                    <td class="buttons">1</td>
-                    <td class="buttons">2</td>
-                    <td class="buttons">3</td>
-                    <td class="buttons" rowspan="2">+</td>
-                </tr>
-                <tr>
-                    <td class="buttons">0</td>
-                    <td class="buttons">.</td>
-                    <td class="buttons">=</td>
-                </tr>
-            </table>
         </div>
+        
         <script src="cacl.js"></script>
     </body>
 </html>
