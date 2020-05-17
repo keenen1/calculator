@@ -103,11 +103,11 @@ function buttonPressed(e) {
     if (clickedItem == "percent") {
         if (total != 0 && numString == "") {
             total /= 100
-            input.innerHTML = total
+            input.innerHTML = round2DP(total)
         }else if (numString != ""){
             total = parseFloat(numString)
             total /= 100
-            input.innerHTML = total
+            input.innerHTML = round2DP(total)
         }
         prevOpe = ""
         currentOpe = ""
@@ -146,6 +146,10 @@ function numberPressed(num){
             prevOpe = currentOpe
             currentOpe = ""
         }
+        if (currentOpe == "="){
+            total = 0
+            numString = ""
+        }
         numString = numString.concat(num)
         input.innerHTML = numString
     }
@@ -160,22 +164,22 @@ function operator(){
     }else if (total != 0 && numString != ""){
         if (prevOpe == "+") {
             total += parseFloat(numString)
-            input.innerHTML = total
+            input.innerHTML = round2DP(total)
             numString = ""
             prevOpe = currentOpe
         }else if (prevOpe == "-") {
             total -= parseFloat(numString)
-            input.innerHTML = total
+            input.innerHTML = round2DP(total)
             numString = ""
             prevOpe = currentOpe
         }else if (prevOpe == "x") {
             total *= parseFloat(numString)
-            input.innerHTML = total
+            input.innerHTML = round2DP(total)
             numString = ""
             prevOpe = currentOpe
         }else if (prevOpe == "/") {
             total /= parseFloat(numString)
-            input.innerHTML = total
+            input.innerHTML = round2DP(total)
             numString = ""
             prevOpe = currentOpe
         }
@@ -186,4 +190,10 @@ function operator(){
             numString = ""
         }
     }
+}
+
+// Round float to 2 dcp only when necessary
+function round2DP(total){
+    if (total % 1 != 0) return total.toFixed(2)
+    if (total % 1 == 0) return total
 }
